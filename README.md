@@ -1,1 +1,0 @@
-# puncta_analysis
