@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: puncta_analysis
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Heino
+    family-names: Hulsey-Vincent
+    email: heinohv@gmail.com
+    affiliation: Western Washington University
+identifiers:
+  - type: url
+    value: 'https://github.com/heinohv'
+    description: GithHub profile
+repository-code: 'https://github.com/heinohv/puncta_analysis'
+date-released: '2023-04-30'
