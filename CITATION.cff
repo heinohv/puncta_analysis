@@ -12,9 +12,6 @@ authors:
     family-names: Hulsey-Vincent
     email: heinohv@gmail.com
     affiliation: Western Washington University
-identifiers:
-  - type: url
-    value: 'https://github.com/heinohv'
-    description: GitHub Profile
 repository-code: 'https://github.com/heinohv/puncta_analysis'
+license: MIT
 date-released: '2023-04-30'
