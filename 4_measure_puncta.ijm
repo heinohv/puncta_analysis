@@ -4,7 +4,7 @@ threshold_methods = newArray("Phansalkar","Bernsen");
 Dialog.create("Measure puncta settings");
 Dialog.addCheckbox("Manually check each ROI", 0);
 Dialog.addNumber("#of images to process (0=all)", 0);
-Dialog.addNumber("Minimum accepted puncta size", 8);
+Dialog.addNumber("Minimum accepted puncta size", 0.2);
 Dialog.addNumber("Sigma", 0.1);
 Dialog.addNumber("Radius", 2);
 Dialog.addChoice("Threshold method", threshold_methods, threshold_methods[0]);
@@ -149,7 +149,6 @@ for (photo_number = 0; photo_number < photo_quantity; photo_number++) {
 			d = Fit.p(3);
 
 		//taking Y values from model to calc half max
-		Plot.getValues(xpoints, ypoints);
 		Array.getStatistics(ypoints, plot_ymin, plot_ymax, mean, stdDev);
 		half_max = (plot_ymax+plot_ymin)/2;//(peak of the plot+min of the plot / 2) puts us at the halfway point
 
