@@ -2,25 +2,32 @@
 //It will crop/straighten the VNC into a rectangle
 //chose your file paths
 max_dir = getDirectory("Choose the folder your uncropped max projections are");
+fileList = getFileList(max_dir);
 vnc_dir = getDirectory("Choose the folder to save your cropped VNC images");
 
 
 //Settings:
+//open the first image in the file to extract the units (e.g. microns)
+open(max_dir+fileList[0]);
+getPixelSize(unit, pixelWidth, pixelHeight);
+close();
 Dialog.create("worm to VNC settings");
-Dialog.addNumber("Line width", 25);
+Dialog.addNumber("Line width ("+unit+")", 1);
 Dialog.addCheckbox("Hide file name", 0);
 Dialog.show();
-line_width = Dialog.getNumber();
+user_selected_line_width = Dialog.getNumber();
 hide_file_name = Dialog.getCheckbox();
 
-//setting line width
-run("Line Width...", "line="+line_width);
 
 
-fileList = getFileList(max_dir);
 //loop to open each image from the folder with max projections
 for (file = 0; file < fileList.length; file++) {
 	open(max_dir+fileList[file]);
+	
+	//converting user selected line width into pixels 
+	getPixelSize(unit, pixelWidth, pixelHeight);
+	line_width = user_selected_line_width  / pixelWidth;
+	run("Line Width...", "line="+line_width);
 	
 	full_worm_title= getTitle();
 	full_worm_window_name = full_worm_title;
