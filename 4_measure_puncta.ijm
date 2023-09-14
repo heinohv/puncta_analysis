@@ -4,9 +4,9 @@ threshold_methods = newArray("Phansalkar","Bernsen");
 Dialog.create("Measure puncta settings");
 Dialog.addCheckbox("Manually check each ROI", 0);
 Dialog.addNumber("#of images to process (0=all)", 0);
-Dialog.addNumber("Minimum accepted puncta size", 0.2);
-Dialog.addNumber("Sigma", 0.1);
-Dialog.addNumber("Radius", 2);
+Dialog.addNumber("Minimum accepted puncta size", 0.3);
+Dialog.addNumber("Sigma", 0.75);
+Dialog.addNumber("Radius", 1);
 Dialog.addChoice("Threshold method", threshold_methods, threshold_methods[0]);
 
 Dialog.addString("Table name", "Puncta_size");
